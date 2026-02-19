@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Taxonomy of Skinspan — Jeannie Joshi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --deep: #141512;
+    --card: #1a1b18;
+    --border: #252622;
+    --muted: #7a7970;
+    --sage: #7a9e7e;
+    --sage-dim: #6a9b6e;
+    --cream: #e8e2d5;
+    --warm: #ccc6b8;
+    --gold: #c4a96a;
+    --gold-dim: #b8954a;
+    --accent: #8fad8f;
+    --text: #e0dbd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 64px 64px 48px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+
+  .header-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .header-sub {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--warm);
+    line-height: 1.7;
+    max-width: 460px;
+  }
+
+  .header-byline {
+    margin-top: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sage);
+    letter-spacing: 0.02em;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  /* MODE TOGGLE */
+  .mode-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 0;
+    padding: 32px 64px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mode-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 8px;
+  }
+
+  .mode-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--warm);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .mode-btn:first-of-type { border-right: none; }
+
+  .mode-btn:hover {
+    color: var(--cream);
+    border-color: var(--muted);
+  }
+
+  .mode-btn.active {
+    background: var(--card);
+    border-color: var(--sage-dim);
+    color: var(--accent);
+  }
+
+  /* MAIN */
+  main {
+    position: relative;
+    z-index: 1;
+    padding: 0 64px 80px;
+  }
+
+  /* ── MODE 1: BROWSE ── */
+  #mode-browse { display: block; }
+  #mode-translate { display: none; }
+
+  .browse-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 48px;
+    border: 1px solid var(--border);
+  }
+
+  .lexicon-card {
+    background: var(--deep);
+    padding: 36px 40px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lexicon-card::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 2px;
+    height: 0;
+    background: var(--sage);
+    transition: height 0.3s ease;
+  }
+
+  .lexicon-card:hover { background: var(--card); }
+  .lexicon-card.open { background: var(--card); }
+  .lexicon-card.open::after { height: 100%; }
+
+  .card-legacy {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .card-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .card-arrow {
+    font-size: 10px;
+    color: var(--sage-dim);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-arrow span {
+    color: var(--accent);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .card-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .lexicon-card.open .card-expand {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .card-expand-inner {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .expand-section-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+  }
+
+  .expand-what-shifts {
+    font-size: 12px;
+    color: var(--warm);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .client-script {
+    background: #0e0f0d;
+    border-left: 2px solid var(--sage-dim);
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.8;
+    font-style: italic;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  .client-script::before {
+    content: '"';
+    font-size: 28px;
+    color: var(--sage-dim);
+    font-family: 'Cormorant Garamond', serif;
+    display: block;
+    margin-bottom: -8px;
+    font-style: normal;
+  }
+
+  /* ── MODE 2: PHRASE SELECTOR ── */
+  .translate-intro {
+    padding: 40px 0 32px;
+    max-width: 560px;
+  }
+
+  .translate-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .translate-intro p {
+    font-size: 12px;
+    color: var(--warm);
+    line-height: 1.7;
+  }
+
+  .phrase-section-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 32px 0 12px;
+  }
+
+  .phrase-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .phrase-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--warm);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .phrase-btn:hover {
+    border-color: var(--muted);
+    color: var(--cream);
+    background: #1e1f1c;
+  }
+
+  .phrase-btn.active {
+    background: var(--card);
+    border-color: var(--sage-dim);
+    color: var(--accent);
+  }
+
+  /* Result panel */
+  .result-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 40px;
+    display: none;
+  }
+
+  .result-panel.visible { display: block; }
+
+  .result-match-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  .result-legacy {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-decoration: line-through;
+    text-decoration-color: var(--muted);
+  }
+
+  .result-reframe {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .result-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .result-shifts-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+  }
+
+  .result-shifts {
+    font-size: 12px;
+    color: var(--warm);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .result-script {
+    background: #0e0f0d;
+    border-left: 2px solid var(--sage-dim);
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.8;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+  }
+
+  .result-script::before {
+    content: '"';
+    font-size: 28px;
+    color: var(--sage-dim);
+    font-family: 'Cormorant Garamond', serif;
+    display: block;
+    margin-bottom: -8px;
+    font-style: normal;
+  }
+
+  @media (max-width: 900px) {
+    .phrase-grid { gap: 6px; }
+    .result-panel { padding: 28px; }
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--sage-dim);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header, .mode-bar, main {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .mode-bar { animation-delay: 0.1s; }
+  main { animation-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    header { padding: 40px 32px 32px; grid-template-columns: 1fr; }
+    .mode-bar { padding: 24px 32px; }
+    main { padding: 0 32px 60px; }
+    footer { padding: 20px 32px; }
+    .browse-grid { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="header-eyebrow">Luxe Science — by Jeannie Joshi</div>
+    <h1 class="header-title">The Taxonomy<br>of <em>Skinspan</em></h1>
+    <p class="header-byline">Skinspan Lexicon — by Jeannie Joshi</p>
+    <p class="header-sub">A living translation tool for salon professionals. Shift your language from legacy beauty terms to the longevity frame your bio-optimized clients are already using.</p>
+  </div>
+  <div class="header-meta">
+    © Jeannie Joshi 2026<br>
+    Luxe Science<br>
+    <br>
+    13 terms · 708 keywords<br>2 modes
+  </div>
+</header>
+
+<div class="mode-bar">
+  <span class="mode-label">Mode —</span>
+  <button class="mode-btn active" onclick="setMode('browse')" id="btn-browse">Browse Terms</button>
+  <button class="mode-btn" onclick="setMode('translate')" id="btn-translate">Select a Phrase</button>
+</div>
+
+<main>
+
+  <!-- ── MODE 1: BROWSE ── -->
+  <div id="mode-browse">
+    <div class="browse-grid" id="card-grid"></div>
+  </div>
+
+  <!-- ── MODE 2: PHRASE SELECTOR ── -->
+  <div id="mode-translate">
+    <div class="translate-intro">
+      <h2>What do you usually say?</h2>
+      <p>Select the phrase you use most in consultations. The tool maps it directly to the longevity reframe — no typing, no guessing.</p>
+    </div>
+    <div id="phrase-selector"></div>
+    <div id="result-panel" class="result-panel"></div>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-note">For professional use in salon consultation and brand training</span>
+  <span class="footer-tag">skin as a living organ with memory</span>
+</footer>
+
+<script>
+const LEXICON = [
+  {
+    legacy: "Anti-aging",
+    reframe: "Skin longevity / skinspan",
+    shifts: "From resisting aging to describing the duration over which skin reliably performs its core functions — protection, repair, and comfortable sensation. Longevity has a measurable arc. Resistance doesn't.",
+    script: "We're not trying to turn back the clock. We're looking at how to extend the period where your skin is genuinely performing well — barrier intact, recovering quickly, feeling comfortable. That's skinspan.",
+    keywords: [
+      "anti-age","anti aging","antiaging","anti-aging","turn back the clock",
+      "fight aging","combat aging","slow aging","slow down aging","reverse aging",
+      "defy age","age gracefully","age well","resist aging","aging skin",
+      "age management","age defying","age-defying","pro-age","pro age",
+      "don't want to age","don't want to look old","want to age well",
+      "longevity","healthspan","skinspan","lifespan","biological age",
+      "biohack","biohacking","bio-optimized","optimized","glucose",
+      "glucose monitor","wearable","oura ring","longevity stack","rewired"
+    ]
+  },
+  {
+    legacy: "Younger-looking skin",
+    reframe: "Skin's estimated biological age",
+    shifts: "From appearance-based claims to measurable changes tracked through aging markers and validated models. Biological age is a number the client can own and track over time — not a mirror impression.",
+    script: "Rather than aiming to look younger, we can start talking about your skin's estimated biological age — the cellular health markers that tell us more than texture or tone alone. That's something we can actually track and influence over time.",
+    keywords: [
+      "look younger","younger looking","younger skin","look young","appear younger",
+      "look my age","older than my age","look older","look tired","tired looking",
+      "tired skin","always look tired","looks tired","always looks tired","people say i look tired","looks older than",
+      "years younger","ten years younger","take years off",
+      "age spots","sun spots","pigmentation","dark spots","uneven tone",
+      "uneven skin tone","discoloration","discolouration","hyperpigmentation",
+      "liver spots","brown spots","skin age","cellular age","epigenetic",
+      "markers","biomarkers","aging markers","clock","track results","measure",
+      "skin test","skin score","data","metrics","youthful appearance"
+    ]
+  },
+  {
+    legacy: "Radiance / glow",
+    reframe: "Barrier resilience and recovery speed",
+    shifts: "Surface luminosity reframed as a result of barrier function — moisture retention, stress response, and self-repair capacity. Glow isn't cosmetic. It's evidence of a skin that's working.",
+    script: "That luminosity you're after — it's actually your barrier functioning well. When your skin is retaining moisture properly and recovering from daily stress quickly, that's what creates the glow. We work on the mechanism, not just the look.",
+    keywords: [
+      "glow","glowing","radiance","radiant","luminous","luminosity",
+      "lit from within","glass skin","glazed","dewy","dewey","fresh",
+      "healthy glow","skin looks healthy","vital","vitality","alive",
+      "dull","dullness","flat","grey","gray","lackluster","lacklustre",
+      "no glow","lost its glow","used to glow",
+      "barrier","barrier function","barrier integrity","barrier repair",
+      "moisture","moisture retention","hydration","dry","dehydrated",
+      "dehydration","moisture barrier","lipid barrier","compromised barrier",
+      "broken barrier","stripped","tight skin","flaking","peeling",
+      "recovery","recover","resilience","repair","self repair","bounce back",
+      "stressed skin","pollution","environmental damage","winter skin",
+      "seasonal skin","travel skin","jet lag skin","sleep deprived skin"
+    ]
+  },
+  {
+    legacy: "Sensitive / reactive skin",
+    reframe: "Inflammaging profile",
+    shifts: "Chronic, low-grade inflammatory activity in tissue — managed as an ongoing profile, not a skin type. Inflammaging connects your skin's behavior to systemic patterns: sleep, diet, nervous system health, stress load, and recovery.",
+    script: "What we often call 'sensitive' or 'reactive' is frequently a chronic low-grade inflammatory pattern — what researchers call inflammaging. It connects to what's happening systemically: sleep quality, stress load, gut health. We can address it topically and help you see the bigger picture.",
+    keywords: [
+      "sensitive","sensitivity","reactive","reactivity","reacts to everything",
+      "reacts badly","freaks out","skin freaks out","skin goes crazy",
+      "can't use anything","can't tolerate","everything irritates",
+      "red","redness","flushing","flush","rosy","always red",
+      "red after facials","red in the cold","red in winter","red in wind",
+      "rosacea","couperose","broken capillaries","thread veins",
+      "inflamed","inflammation","inflammaging","inflammatory",
+      "chronic inflammation","low grade inflammation","cytokines","sasp activity",
+      "irritated","irritation","itchy","itch","stinging","burning",
+      "tight after cleansing","triggers","flare","flare up","flares up",
+      "hormonal","hormones","perimenopause","menopause","stress triggers",
+      "diet triggers","food triggers","gut","gut health",
+      "eczema","dermatitis","psoriasis","seborrheic","perioral"
+    ]
+  },
+  {
+    legacy: "Anti-wrinkle / firming",
+    reframe: "Senescence-informed interventions",
+    shifts: "Visible firmness and texture changes understood in context: senescent cell burden, SASP activity, and extracellular matrix integrity. This moves the conversation from surface correction to cellular environment — from symptom to source.",
+    script: "Firmness and texture loss are partly driven by an accumulation of senescent cells — cells that have permanently stopped renewing but are actively degrading the tissue around them. We can target that environment rather than just treating the surface expression.",
+    keywords: [
+      "wrinkle","wrinkles","fine lines","fine line","lines","deep lines",
+      "expression lines","forehead lines","frown lines","crow's feet",
+      "crows feet","lip lines","around the mouth","nasolabial","marionette",
+      "firm","firming","firmness","lift","lifting","tighten","tightening",
+      "sag","sagging","saggy","drooping","jowls","jowl area",
+      "lost volume","hollow","sunken","deflated",
+      "texture","rough texture","uneven texture","crepey","crepe",
+      "papery","thin skin","skin is thinner","skin getting thinner",
+      "lax","laxity","elasticity","lost elasticity","no elasticity",
+      "collagen","elastin","extracellular matrix","dermal thickness",
+      "epidermal thickness","regeneration","regenerate","cell turnover",
+      "senescent","senescence","cellular aging","cell renewal",
+      "peptide","retinol","retinoid","growth factor",
+      "older looking","looks aged","aged overnight","aged quickly","look saggy","looks saggy","looks crepey","looking crepey"
+    ]
+  },
+  {
+    legacy: "Products",
+    reframe: "Protocols over time",
+    shifts: "Bottles and jars repositioned as components of a defined sequence — integrating in-salon treatments, home care, and realistic timeframes. Products without protocol are decoration. Protocol gives them meaning.",
+    script: "The products are only as effective as the protocol around them. What I want to build with you is a sequence — what happens here in the salon, what happens at home, and what we can realistically expect at each stage. That's when you start to see real change.",
+    keywords: [
+      "product","products","what products","what should i use","what to use",
+      "recommend","recommendation","what do you recommend","prescribe",
+      "buy","purchase","retail","take home","home care","homecare",
+      "routine","regimen","skin routine","morning routine","evening routine",
+      "night routine","day routine","am routine","pm routine",
+      "what order","which order","how do i layer","layering",
+      "steps","how many steps","simple routine","minimal routine",
+      "treatment","facial","in salon","how often","frequency",
+      "every how many weeks","maintenance","series","course of treatment","package",
+      "how long","when will i see results","how soon","timeline",
+      "results","realistic","expectations","what to expect"
+    ]
+  },
+  {
+    legacy: "Skin care",
+    reframe: "Skinspan as part of healthspan",
+    shifts: "Skin elevated from isolated beauty practice to one site of intervention within a broader longevity stack — alongside sleep, metabolic health, recovery, and systemic wellbeing. Skin as a living organ with memory.",
+    script: "The way I think about it now: skincare isn't separate from your health. Your skin reflects your sleep quality, your nervous system, your metabolic patterns. When we work on your skin here, we're working on one part of your healthspan — the period when everything is genuinely performing well.",
+    keywords: [
+      "holistic","whole body","overall health","inside out","inside and out",
+      "health and beauty","beauty and wellness","mind body","mind and body",
+      "sleep","sleep quality","not sleeping","poor sleep","insomnia",
+      "stressed","chronic stress","burnout","cortisol","nervous system",
+      "nervous system health","parasympathetic",
+      "nutrition","diet","what i eat","gut health","digestion",
+      "muscle","exercise","working out","fitness","recovery",
+      "longevity stack","biohacking","concierge","functional medicine",
+      "integrative health","metabolic health","metabolism","systemic",
+      "wellness","wellbeing","well-being","self care","self-care",
+      "lifestyle","habits","daily habits","health goals",
+      "tracker","tracking","wearable","oura","whoop","continuous glucose",
+      "cgm","glucose monitor","ai","data driven","optimize","rewired wellness"
+    ]
+  }
+,
+
+  {
+    legacy: "Hair thinning / hair loss",
+    reframe: "Follicle healthspan / hair longevity",
+    shifts: "Hair loss repositioned from a cosmetic inevitability to a biological process that can be mapped, measured, and influenced. The follicle is a living tissue with its own senescence cycle — anagen phase, miniaturization, stem cell exhaustion. Follicle healthspan asks how long we can keep the anagen phase robust, not just how we disguise the result when we can't.",
+    script: "What we're really looking at is your follicle healthspan — how long your follicles can maintain a full, active growth cycle. Thinning is often a sign that the cycle is shortening, not that growth has stopped. That's a biological process we can work with — scalp environment, inflammation levels, lifestyle — rather than just something to cover.",
+    keywords: [
+      "hair loss","thinning hair","hair thinning","losing hair","hair falling out",
+      "hair shedding","shedding","excessive shedding","more hair in the drain",
+      "hair in the shower","hair on my pillow","balding","bald","receding",
+      "receding hairline","hairline","pattern baldness","alopecia",
+      "female hair loss","women hair loss","postpartum hair loss","hormonal hair loss",
+      "menopausal hair loss","perimenopause hair","thyroid hair loss",
+      "my hair is thinner","hair has gotten thinner","hair is not as thick",
+      "less density","lost density","hair density","no volume","flat hair",
+      "fine hair","finer hair","hair getting finer","limp hair",
+      "follicle","follicles","hair follicle","hair growth","hair cycle",
+      "anagen","miniaturization","stem cell","dormant follicles",
+      "scalp health","scalp care","scalp inflammation","scalp microbiome",
+      "scalp barrier","scalp serum","scalp treatment","scalp analysis",
+      "hairceuticals","skinification","hair longevity","follicle healthspan",
+      "hair healthspan","hair wellness","hair vitality"
+    ]
+  },
+  {
+    legacy: "Scalp problems / dandruff / oily scalp",
+    reframe: "Scalp microbiome balance / scalp inflammaging",
+    shifts: "Scalp conditions reframed from hygiene issues to microbiome and barrier events — chronic imbalances with inflammatory drivers rather than isolated surface problems. The scalp microbiome governs follicle environment the same way the skin microbiome governs facial resilience. Dandruff is often not about cleanliness but about microbial diversity and barrier disruption.",
+    script: "What we often treat as a dandruff or oiliness problem is usually a microbiome imbalance — the scalp's ecosystem getting out of equilibrium. We approach it the same way we approach barrier health on the face: reduce the inflammatory triggers, restore microbial diversity, support the environment that follicles actually need to function well.",
+    keywords: [
+      "dandruff","flaking scalp","flaky scalp","scalp flakes","white flakes",
+      "oily scalp","greasy scalp","scalp buildup","product buildup","sebum",
+      "itchy scalp","scalp itch","scratching scalp","scalp irritation",
+      "dry scalp","tight scalp","scalp tightness","scalp sensitivity",
+      "seborrheic dermatitis","seborrhea","psoriasis scalp","scalp psoriasis",
+      "scalp acne","scalp bumps","scalp redness","red scalp","inflamed scalp",
+      "scalp odor","scalp smell","scalp condition","scalp issue",
+      "microbiome","scalp microbiome","microbial balance","probiotics hair",
+      "prebiotics scalp","scalp ecosystem","scalp environment",
+      "scalp barrier","scalp repair","scalp serum","scalp reset"
+    ]
+  },
+  {
+    legacy: "Neck aging / décolletage",
+    reframe: "Contiguous tissue zone / extended skinspan territory",
+    shifts: "Neck and décolletage elevated from afterthought to what they biologically are: tissue that is thinner than the face, has fewer oil glands, is constantly in motion, and begins showing cellular aging earlier. The face does not stop at the jawline. Treating skinspan without including the neck is like servicing an engine and ignoring the drivetrain.",
+    script: "The neck and décolletage are actually some of the most biologically vulnerable tissue we have — thinner skin, fewer oil glands, constant mechanical movement, high UV exposure. What we're seeing there is often further along the senescence timeline than the face. When we build your skinspan protocol, we treat it as one contiguous zone, not a separate afterthought.",
+    keywords: [
+      "neck","my neck","neck skin","neck aging","neck wrinkles","neck lines",
+      "neck bands","neck cords","platysma","turkey neck","tech neck","phone neck",
+      "looking down at phone","neck folds","neck creases","loose neck","sagging neck",
+      "crepey neck","thin neck skin","neck firmness","tighten neck",
+      "decolletage","décolletage","chest skin","chest wrinkles","chest lines",
+      "cleavage lines","chest creases","sun damage chest","chest aging",
+      "chest pigmentation","chest spots","neck spots","neck pigmentation",
+      "collarbone","upper chest","lower face and neck","jawline to chest",
+      "face stops at jawline","forget my neck","neglect my neck","ignore my neck",
+      "neck doesn't match","neck looks older","face and neck mismatch",
+      "hands and neck","hands neck decolletage"
+    ]
+  },
+  {
+    legacy: "Stressed skin / tired skin",
+    reframe: "Cortisol burden / brain-skin axis disruption",
+    shifts: "Stress-related skin changes reframed from a vague complaint to a measurable biological pathway: the HPA axis releasing cortisol, which disrupts barrier function, increases oil production, drives inflammation, and accelerates cellular aging. The brain-skin axis is bidirectional — skin distress signals the brain, brain stress signals the skin. Addressing the skin without addressing the nervous system load is treating downstream effects.",
+    script: "What we're seeing in your skin is actually a cortisol story. When the nervous system is under sustained load, the brain-skin axis keeps the skin in a low-grade stress state — barrier function drops, inflammation rises, repair slows. We can work topically to buffer that, but the most powerful thing is understanding the load your skin is carrying systemically and building a protocol that accounts for it.",
+    keywords: [
+      "stressed","stressed skin","skin stress","stress breakouts","cortisol",
+      "cortisol skin","stress hormones","stress and skin","anxiety skin",
+      "anxious","work stress","burnout skin","exhausted","exhausted skin",
+      "tired","tired skin","tired face","always look tired","skin looks tired",
+      "looks dull when stressed","skin reacts to stress","stress triggers breakouts",
+      "stress makes skin worse","worse when stressed","flares up under stress",
+      "brain skin","brain skin axis","skin brain connection","nervous system skin",
+      "HPA axis","neurocosmetics","neurocosmetic","mind skin","emotional skin",
+      "skin mood","mood skin","sleep deprived","not sleeping well",
+      "insomnia skin","poor sleep skin","sleep and skin",
+      "skin looks worse when tired","dark circles","puffiness","inflammation stress",
+      "chronic stress skin","adrenal","adrenal fatigue","cortisol overload"
+    ]
+  },
+  {
+    legacy: "Facial / treatment",
+    reframe: "Regenerative protocol / in-clinic longevity session",
+    shifts: "Individual treatments repositioned as sessions within a defined regenerative protocol — each serving a specific function in the sequence: preparation, active intervention, recovery, maintenance. A facial as a one-off event is a cosmetic experience. A facial as a protocol step is a longevity intervention. The difference is intent, sequencing, and continuity.",
+    script: "I think about what we do here differently from a traditional facial. This is a regenerative session — it has a specific role in your protocol sequence. Today we're focusing on barrier preparation and cellular environment. Next session we'll layer in the active intervention. The results compound when there's a deliberate sequence rather than starting from scratch each time.",
+    keywords: [
+      "facial","get a facial","book a facial","need a facial","want a facial",
+      "treatment","in salon","in-salon","in clinic","in-clinic","in office",
+      "appointment","book appointment","treatment room","on the table",
+      "peel","chemical peel","exfoliation treatment","microneedling",
+      "rf microneedling","radiofrequency","laser treatment","LED treatment",
+      "led light therapy","red light","light therapy","photobiomodulation",
+      "gua sha","lymphatic drainage","massage facial","facial massage",
+      "mesotherapy","prp","platelet rich plasma","exosome treatment",
+      "microcurrent","ultrasound facial","ultrasound skin","hifu",
+      "high frequency","galvanic","oxygen facial","hydrafacial","hydradermie",
+      "how often should i come","how many sessions","series of treatments",
+      "course of facials","maintenance facial","top up","touch up"
+    ]
+  },
+  {
+    legacy: "Active ingredients / serums / hero products",
+    reframe: "Longevity actives / senotherapeutic stack / regenerative agents",
+    shifts: "Individual hero ingredients repositioned as components of a regenerative stack — categorized by mechanism rather than by marketing claim. The longevity frame distinguishes between ingredients that address surface symptoms and those that engage cellular environment: senolytics that clear senescent cells, senomorphics that modulate SASP, exosomes that restore cell communication, and NAD+ precursors that fuel cellular repair.",
+    script: "The way I think about ingredients now is by what biological job they're doing rather than what they promise on the label. Are they addressing the cellular environment — senescent cell burden, inflammation signaling, barrier reconstruction? Or are they working on the surface expression? Both have a place, but the longevity-focused actives are the ones doing structural work underneath. That's what we're building your protocol around.",
+    keywords: [
+      "exosomes","exosome","exosome serum","exosome treatment","exosome facial",
+      "pdrn","salmon dna","polynucleotides","growth factors","growth factor serum",
+      "nad","nad+","nmn","nicotinamide riboside","cellular energy","mitochondrial",
+      "senolytic","senolytics","senomorphic","zombie cells","senescent cells",
+      "retinol","retinoid","tretinoin","vitamin a","retin-a","retinoic acid",
+      "vitamin c","ascorbic acid","niacinamide","ceramides","ceramide",
+      "peptide","peptides","signal peptides","carrier peptides","neuropeptides",
+      "collagen peptides","matrixyl","argireline","copper peptides",
+      "hyaluronic acid","ha","sodium hyaluronate","squalane","bakuchiol",
+      "resveratrol","urolithin","postbiotic","probiotic skin","prebiotic skin",
+      "microbiome skincare","skin microbiome","biome skincare",
+      "stem cells","stem cell serum","plant stem cells","epigenetic",
+      "antioxidants","oxidative stress","free radicals","adaptogens",
+      "ashwagandha skin","centella asiatica","cica","tranexamic acid",
+      "what ingredients","what actives","what should i be using",
+      "hero ingredient","best serum","what serum","actives","active ingredients",
+      "longevity ingredients","regenerative","regenerative skincare","biotech skincare"
+    ]
+  }
+
+];
+
+// ── RENDER CARDS ──
+function renderCards() {
+  const grid = document.getElementById('card-grid');
+  grid.innerHTML = LEXICON.map((item, i) => `
+    <div class="lexicon-card" id="card-${i}" onclick="toggleCard(${i})">
+      <div class="card-legacy">Legacy term</div>
+      <div class="card-term">${item.legacy}</div>
+      <div class="card-arrow">reframes as <span>${item.reframe}</span></div>
+      <div class="card-expand">
+        <div class="card-expand-inner">
+          <div class="expand-section-label">What shifts</div>
+          <div class="expand-what-shifts">${item.shifts}</div>
+          <div class="expand-section-label">Client conversation line</div>
+          <div class="client-script">${item.script}"</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleCard(i) {
+  const card = document.getElementById(`card-${i}`);
+  const wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.lexicon-card').forEach(c => c.classList.remove('open'));
+  if (!wasOpen) card.classList.add('open');
+}
+
+// ── MODE SWITCH ──
+function setMode(mode) {
+  document.getElementById('mode-browse').style.display = mode === 'browse' ? 'block' : 'none';
+  document.getElementById('mode-translate').style.display = mode === 'translate' ? 'block' : 'none';
+  document.getElementById('btn-browse').classList.toggle('active', mode === 'browse');
+  document.getElementById('btn-translate').classList.toggle('active', mode === 'translate');
+}
+
+// ── PHRASE DATA ──
+// Each entry: { phrase, termIndex }
+// termIndex maps to LEXICON position
+const PHRASES = [
+  // Longevity / anti-aging (index 0)
+  { phrase: "She wants to look younger", idx: 0 },
+  { phrase: "We want to fight the aging process", idx: 0 },
+  { phrase: "She's interested in anti-aging", idx: 0 },
+  { phrase: "She wants to turn back the clock", idx: 0 },
+  { phrase: "She wants to age gracefully", idx: 0 },
+
+  // Biological age (index 1)
+  { phrase: "She always looks tired", idx: 1 },
+  { phrase: "She looks older than her age", idx: 1 },
+  { phrase: "She has age spots and uneven tone", idx: 1 },
+  { phrase: "She wants to track what's changing in her skin", idx: 1 },
+  { phrase: "She wants to look her age, not older", idx: 1 },
+
+  // Radiance / barrier (index 2)
+  { phrase: "She wants to glow", idx: 2 },
+  { phrase: "Her skin looks dull and flat", idx: 2 },
+  { phrase: "She's lost her radiance", idx: 2 },
+  { phrase: "She wants that dewy, lit-from-within look", idx: 2 },
+  { phrase: "Her skin doesn't bounce back anymore", idx: 2 },
+  { phrase: "Her skin looks grey and tired", idx: 2 },
+
+  // Sensitive / inflammaging (index 3)
+  { phrase: "Her skin is very sensitive and reactive", idx: 3 },
+  { phrase: "She can't tolerate anything", idx: 3 },
+  { phrase: "Everything irritates her skin", idx: 3 },
+  { phrase: "She's always red after facials", idx: 3 },
+  { phrase: "Her skin freaks out in winter", idx: 3 },
+  { phrase: "She has rosacea / always flushing", idx: 3 },
+
+  // Firming / senescence (index 4)
+  { phrase: "She wants to lift and firm", idx: 4 },
+  { phrase: "She has fine lines and wrinkles", idx: 4 },
+  { phrase: "Her skin is crepey and loose", idx: 4 },
+  { phrase: "She's lost volume and elasticity", idx: 4 },
+  { phrase: "She wants to tighten her jawline", idx: 4 },
+  { phrase: "Her skin is thinner than it used to be", idx: 4 },
+
+  // Products / protocols (index 5)
+  { phrase: "What products should I recommend?", idx: 5 },
+  { phrase: "She wants a simple routine", idx: 5 },
+  { phrase: "How often should she come in?", idx: 5 },
+  { phrase: "When will she see results?", idx: 5 },
+  { phrase: "What's the right layering order?", idx: 5 },
+
+  // Skinspan / healthspan (index 6)
+  { phrase: "She wants a holistic approach", idx: 6 },
+  { phrase: "Her skin reflects her stress and lack of sleep", idx: 6 },
+  { phrase: "She's focused on overall wellness", idx: 6 },
+  { phrase: "She tracks her health with wearables", idx: 6 },
+  { phrase: "She wants skincare that fits her lifestyle", idx: 6 },
+
+  // Hair thinning (index 7)
+  { phrase: "She's losing more hair than usual", idx: 7 },
+  { phrase: "Her hair is getting thinner and finer", idx: 7 },
+  { phrase: "She's worried about hair loss", idx: 7 },
+  { phrase: "There's more hair in the drain", idx: 7 },
+  { phrase: "She wants more volume and density", idx: 7 },
+
+  // Scalp (index 8)
+  { phrase: "She has dandruff / flaky scalp", idx: 8 },
+  { phrase: "Her scalp is oily but her ends are dry", idx: 8 },
+  { phrase: "Her scalp is really itchy and irritated", idx: 8 },
+  { phrase: "She has buildup and scalp sensitivity", idx: 8 },
+
+  // Neck / décolletage (index 9)
+  { phrase: "Her neck is giving her age away", idx: 9 },
+  { phrase: "She always forgets about her décolletage", idx: 9 },
+  { phrase: "Her face and neck don't match", idx: 9 },
+  { phrase: "She has crepey chest and neck skin", idx: 9 },
+  { phrase: "She wants to address tech neck / phone neck", idx: 9 },
+
+  // Stressed / cortisol (index 10)
+  { phrase: "Her skin flares up when she's stressed", idx: 10 },
+  { phrase: "She looks exhausted even when she sleeps", idx: 10 },
+  { phrase: "Work stress is showing up in her skin", idx: 10 },
+  { phrase: "She's been burned out and her skin reflects it", idx: 10 },
+  { phrase: "Her skin is in a cortisol loop", idx: 10 },
+
+  // Facials / treatments (index 11)
+  { phrase: "She wants to book a facial", idx: 11 },
+  { phrase: "How many sessions does she need?", idx: 11 },
+  { phrase: "She wants an in-clinic treatment series", idx: 11 },
+  { phrase: "What's the difference between treatments?", idx: 11 },
+
+  // Ingredients / actives (index 12)
+  { phrase: "She's asking about exosomes", idx: 12 },
+  { phrase: "Should she use retinol or peptides?", idx: 12 },
+  { phrase: "She wants the most effective actives", idx: 12 },
+  { phrase: "She's heard about NAD+ and PDRN", idx: 12 },
+  { phrase: "She wants a longevity-focused ingredient stack", idx: 12 },
+];
+
+// Group labels aligned to LEXICON order
+const CATEGORY_LABELS = [
+  "Aging & longevity goals",
+  "Appearance & tracking",
+  "Radiance & barrier",
+  "Sensitivity & reactivity",
+  "Firmness & texture",
+  "Products & routines",
+  "Lifestyle & wellness",
+  "Hair & scalp — thinning",
+  "Hair & scalp — scalp health",
+  "Neck & décolletage",
+  "Stress & nervous system",
+  "In-clinic treatments",
+  "Ingredients & actives",
+];
+
+// ── RENDER PHRASE SELECTOR ──
+function renderPhraseSelector() {
+  const container = document.getElementById('phrase-selector');
+  if (!container) return;
+
+  // Group phrases by category index
+  const grouped = {};
+  PHRASES.forEach(p => {
+    if (!grouped[p.idx]) grouped[p.idx] = [];
+    grouped[p.idx].push(p);
+  });
+
+  let html = '';
+  Object.keys(grouped).sort((a,b) => a-b).forEach(idx => {
+    html += `<div class="phrase-section-label">${CATEGORY_LABELS[idx]}</div>`;
+    html += `<div class="phrase-grid">`;
+    grouped[idx].forEach((p, i) => {
+      html += `<button class="phrase-btn" onclick="selectPhrase(${p.idx}, this)">${p.phrase}</button>`;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// ── SELECT PHRASE → SHOW RESULT ──
+function selectPhrase(termIdx, btn) {
+  // Deactivate all buttons
+  document.querySelectorAll('.phrase-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const item = LEXICON[termIdx];
+  const panel = document.getElementById('result-panel');
+
+  panel.className = 'result-panel visible';
+  panel.innerHTML = `
+    <div class="result-match-label">Longevity reframe</div>
+    <div class="result-legacy">${item.legacy}</div>
+    <div class="result-reframe">${item.reframe}</div>
+    <div class="result-divider"></div>
+    <div class="result-shifts-label">What shifts</div>
+    <div class="result-shifts">${item.shifts}</div>
+    <div class="result-shifts-label">Try saying this instead</div>
+    <div class="result-script">${item.script}"</div>
+  `;
+
+  // Smooth scroll to result
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Allow Enter key in textarea with Ctrl/Cmd
+document.addEventListener('DOMContentLoaded', () => {
+  renderCards();
+  renderPhraseSelector();
+});
+</script>
+</body>
+</html>
