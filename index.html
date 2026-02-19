@@ -3,29 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Taxonomy of Skinspan — Jeannie Joshi</title>
+<title>A Taxonomy of Skinspan · A Longevity Lexicon for skin science | Jeannie Joshi</title>
+
+<!-- SEO -->
+<meta name="description" content="A taxonomy of skinspan: 33 terms across four registers — legacy, longevity reframe, scientific basis, and plain language. A longevity lexicon for skin science. By Jeannie Joshi. References include Mayo Clinic Proceedings, Nature Aging, and Cell.">
+<meta name="keywords" content="skinspan, skin longevity, longevity skincare, beauty taxonomy, inflammaging, senescence, biological age, salon professional tool, skincare terminology, longevity beauty">
+<meta name="author" content="Jeannie Joshi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeanniejoshi.github.io/skinspan-lexicon/">
+
+<!-- Open Graph (social sharing) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jeanniejoshi.github.io/skinspan-lexicon/">
+<meta property="og:title" content="A Taxonomy of Skinspan · A Longevity Lexicon for skin science">
+<meta property="og:description" content="29 terms mapped across four registers: legacy, longevity reframe, scientific basis, and plain language. A longevity lexicon for skin science professionals.">
+<meta property="og:site_name" content="Luxe Science — Jeannie Joshi">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Taxonomy of Skinspan · A Longevity Lexicon for skin science">
+<meta name="twitter:description" content="33 terms. 4 registers. Legacy term, longevity reframe, scientific basis, plain language. References: Mayo Clinic Proceedings, Nature Aging, Cell. By Jeannie Joshi.">
+<meta name="twitter:creator" content="@jeanniejoshi">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "A Taxonomy of Skinspan · A Longevity Lexicon for skin science",
+  "description": "A classification framework mapping legacy beauty industry language to longevity science equivalents across four registers: legacy term, longevity reframe, scientific basis, and plain language.",
+  "url": "https://jeanniejoshi.github.io/skinspan-lexicon/",
+  "creator": {
+    "@type": "Person",
+    "name": "Jeannie Joshi",
+    "url": "https://jeanniejoshi.github.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Luxe Science"
+  },
+  "keywords": ["skinspan", "skin longevity", "longevity skincare", "inflammaging", "biological age", "salon professional"],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-02-19"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --deep: #141512;
-    --card: #1a1b18;
-    --border: #252622;
-    --muted: #7a7970;
-    --sage: #7a9e7e;
-    --sage-dim: #6a9b6e;
-    --cream: #e8e2d5;
-    --warm: #ccc6b8;
-    --gold: #c4a96a;
-    --gold-dim: #b8954a;
-    --accent: #8fad8f;
-    --text: #e0dbd0;
+    --black: #2C2825;
+    --deep: #F8F3EC;
+    --card: #F2EBE0;
+    --border: #E0D5C8;
+    --muted: #9A8E84;
+    --sage: #5C8A63;
+    --sage-dim: #4E7A56;
+    --cream: #3D342C;
+    --warm: #6B5D54;
+    --gold: #9A7040;
+    --gold-dim: #7A5630;
+    --accent: #7A9E7E;
+    --text: #3D342C;
+    --bg: #FAF6F0;
+    --header-bg: #F0E8DC;
+    --blush: #C4907A;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: var(--black);
+    background: var(--bg);
     color: var(--text);
     font-family: 'DM Mono', monospace;
     font-size: 13px;
@@ -33,15 +79,15 @@
     overflow-x: hidden;
   }
 
-  /* NOISE TEXTURE */
+  /* SUBTLE TEXTURE */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
-    opacity: 0.6;
+    opacity: 0.4;
   }
 
   /* HEADER */
@@ -142,13 +188,20 @@
 
   .mode-btn:hover {
     color: var(--cream);
-    border-color: var(--muted);
+    border-color: var(--sage);
+    background: var(--border);
   }
 
+  /* Nielsen #1: active location must be unambiguous — filled, not just tinted */
   .mode-btn.active {
-    background: var(--card);
-    border-color: var(--sage-dim);
-    color: var(--accent);
+    background: var(--sage);
+    border-color: var(--sage);
+    color: #fff;
+  }
+
+  .mode-btn:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 2px;
   }
 
   /* MAIN */
@@ -162,6 +215,14 @@
   #mode-browse { display: block; }
   #mode-translate { display: none; }
 
+  .browse-instruction {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    padding: 28px 0 20px;
+    text-align: center;
+  }
+
   .browse-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -173,26 +234,91 @@
 
   .lexicon-card {
     background: var(--deep);
-    padding: 36px 40px;
+    padding: 36px 40px 28px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
     position: relative;
     overflow: hidden;
+    outline: none;
   }
 
+  /* Left-edge accent line — Nielsen #1: visible state change */
   .lexicon-card::after {
     content: '';
     position: absolute;
     left: 0; top: 0;
-    width: 2px;
+    width: 3px;
     height: 0;
     background: var(--sage);
-    transition: height 0.3s ease;
+    transition: height 0.35s ease;
   }
 
-  .lexicon-card:hover { background: var(--card); }
-  .lexicon-card.open { background: var(--card); }
+  /* Hover: lift + tint — Nielsen #6: reinforces clickability */
+  .lexicon-card:hover {
+    background: var(--card);
+    box-shadow: 0 4px 20px rgba(60,50,40,0.08);
+    transform: translateY(-1px);
+  }
+
+  /* Focus: explicit ring for keyboard navigation — Nielsen #4 + accessibility */
+  .lexicon-card:focus-visible {
+    background: var(--card);
+    box-shadow: 0 0 0 2px var(--sage), 0 4px 20px rgba(60,50,40,0.1);
+  }
+
+  .lexicon-card.open {
+    background: var(--card);
+    box-shadow: 0 2px 16px rgba(60,50,40,0.07);
+  }
   .lexicon-card.open::after { height: 100%; }
+
+  /* ── EXPAND TOGGLE (chevron + label) ── */
+  /* Nielsen #1 + #6: always-visible affordance that shows state */
+  .card-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    user-select: none;
+  }
+
+  .card-toggle-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s ease;
+  }
+
+  .card-toggle-chevron {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--muted);
+    transition: transform 0.3s ease, color 0.2s ease;
+  }
+
+  /* Chevron rotates on open — Nielsen #1: clear state visibility */
+  .lexicon-card.open .card-toggle-chevron {
+    transform: rotate(180deg);
+    color: var(--sage);
+  }
+
+  .lexicon-card.open .card-toggle-label {
+    color: var(--sage);
+  }
+
+  .lexicon-card:hover .card-toggle-label,
+  .lexicon-card:focus-visible .card-toggle-label {
+    color: var(--text);
+  }
+
+  .lexicon-card:hover .card-toggle-chevron,
+  .lexicon-card:focus-visible .card-toggle-chevron {
+    color: var(--sage);
+  }
 
   .card-legacy {
     font-size: 10px;
@@ -221,10 +347,11 @@
   }
 
   .card-arrow span {
-    color: var(--accent);
+    color: var(--sage);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-size: 22px;
     font-style: italic;
+    line-height: 1.2;
   }
 
   .card-expand {
@@ -261,7 +388,7 @@
   }
 
   .client-script {
-    background: #0e0f0d;
+    background: #F0E8DC;
     border-left: 2px solid var(--sage-dim);
     padding: 16px 20px;
     font-size: 12px;
@@ -327,18 +454,28 @@
     transition: all 0.2s ease;
     line-height: 1.4;
     text-align: left;
+    position: relative;
   }
 
   .phrase-btn:hover {
-    border-color: var(--muted);
-    color: var(--cream);
-    background: #1e1f1c;
+    border-color: var(--sage);
+    color: var(--black);
+    background: var(--border);
+    box-shadow: 0 2px 8px rgba(60,50,40,0.06);
   }
 
+  /* Nielsen #1 — selected state must be unmistakably distinct */
   .phrase-btn.active {
-    background: var(--card);
-    border-color: var(--sage-dim);
-    color: var(--accent);
+    background: var(--sage);
+    border-color: var(--sage);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(92,138,99,0.3);
+  }
+
+  /* Nielsen #4 — keyboard focus */
+  .phrase-btn:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 2px;
   }
 
   /* Result panel */
@@ -401,7 +538,7 @@
   }
 
   .result-script {
-    background: #0e0f0d;
+    background: #F0E8DC;
     border-left: 2px solid var(--sage-dim);
     padding: 16px 20px;
     font-size: 12px;
@@ -472,6 +609,173 @@
     .browse-grid { grid-template-columns: 1fr; }
     .header-meta { text-align: left; }
   }
+  /* REFERENCE TABLE */
+  .reference-intro {
+    padding: 32px 0 28px;
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .reference-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 60px;
+  }
+
+  .reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    table-layout: fixed;
+  }
+
+  .reference-table thead tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .reference-table th {
+    padding: 12px 16px 16px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    vertical-align: top;
+    border-right: 1px solid var(--border);
+    width: 25%;
+  }
+
+  .reference-table th:last-child { border-right: none; }
+
+  .reference-table th span {
+    display: block;
+    margin-top: 5px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: none;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .reference-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .reference-table tbody tr:hover {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .reference-table td {
+    padding: 20px 16px;
+    vertical-align: top;
+    line-height: 1.7;
+    color: var(--text);
+    border-right: 1px solid var(--border);
+    font-size: 12px;
+  }
+
+  .reference-table td:last-child { border-right: none; }
+
+  .col-legacy td, td.col-legacy-cell {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--warm);
+  }
+
+  .col-reframe-cell {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--sage);
+    line-height: 1.3;
+  }
+
+  .col-science-cell {
+    font-size: 11.5px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .col-plain-cell {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 11.5px;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 900px) {
+    .reference-table { table-layout: auto; }
+    .reference-table th, .reference-table td { padding: 14px 10px; }
+  }
+
+  /* REFERENCES SECTION */
+  .references-section {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    background: #F2EBE0;
+    padding: 56px 64px;
+  }
+
+  .references-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    max-width: 1100px;
+  }
+
+  .references-heading {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .references-about p {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 380px;
+  }
+
+  .references-list ol {
+    list-style: decimal;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .references-list li {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+  }
+
+  .references-list li em {
+    font-style: italic;
+    color: var(--warm);
+  }
+
+  @media (max-width: 900px) {
+    .references-section { padding: 40px 32px; }
+    .references-inner { grid-template-columns: 1fr; gap: 40px; }
+    .references-about p { max-width: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -479,15 +783,13 @@
 <header>
   <div>
     <div class="header-eyebrow">Luxe Science — by Jeannie Joshi</div>
-    <h1 class="header-title">The Taxonomy<br>of <em>Skinspan</em></h1>
-    <p class="header-byline">Skinspan Lexicon — by Jeannie Joshi</p>
-    <p class="header-sub">A living translation tool for salon professionals. Shift your language from legacy beauty terms to the longevity frame your bio-optimized clients are already using.</p>
+    <h1 class="header-title">A Taxonomy<br>of <em>Skinspan</em></h1>
+    <p class="header-byline">A Longevity Lexicon for skin science</p>
+    <p class="header-sub">A reference framework mapping legacy beauty industry terminology to its longevity science equivalents — across four registers: legacy term, reframe, scientific basis, and plain language for client conversation.</p>
   </div>
   <div class="header-meta">
     © Jeannie Joshi 2026<br>
-    Luxe Science<br>
-    <br>
-    13 terms · 708 keywords<br>2 modes
+    33 terms · 708 keywords<br>3 modes
   </div>
 </header>
 
@@ -495,12 +797,14 @@
   <span class="mode-label">Mode —</span>
   <button class="mode-btn active" onclick="setMode('browse')" id="btn-browse">Browse Terms</button>
   <button class="mode-btn" onclick="setMode('translate')" id="btn-translate">Select a Phrase</button>
+  <button class="mode-btn" onclick="setMode('reference')" id="btn-reference">Reference Table</button>
 </div>
 
 <main>
 
   <!-- ── MODE 1: BROWSE ── -->
   <div id="mode-browse">
+    <p class="browse-instruction">Select any term to expand its scientific basis and client script</p>
     <div class="browse-grid" id="card-grid"></div>
   </div>
 
@@ -508,13 +812,53 @@
   <div id="mode-translate">
     <div class="translate-intro">
       <h2>What do you usually say?</h2>
-      <p>Select the phrase you use most in consultations. The tool maps it directly to the longevity reframe — no typing, no guessing.</p>
+      <p>Select the phrase you use most in consultations. The tool maps it to the longevity reframe directly.</p>
     </div>
     <div id="phrase-selector"></div>
     <div id="result-panel" class="result-panel"></div>
   </div>
 
+  <!-- ── MODE 3: REFERENCE TABLE ── -->
+  <div id="mode-reference" style="display:none;">
+    <div class="reference-intro">
+      <p>Each term mapped across four registers: legacy usage, longevity reframe, scientific basis, and plain language for client conversation.</p>
+    </div>
+    <div class="reference-table-wrap">
+      <table class="reference-table">
+        <thead>
+          <tr>
+            <th class="col-legacy">Legacy Term<span>Marketing / beauty industry usage</span></th>
+            <th class="col-reframe">Longevity Reframe<span>Preferred terminology in longevity science</span></th>
+            <th class="col-science">Scientific Basis<span>What the mechanism actually describes</span></th>
+            <th class="col-plain">In Plain Language<span>How to say it to a client</span></th>
+          </tr>
+        </thead>
+        <tbody id="reference-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
 </main>
+
+<section class="references-section">
+  <div class="references-inner">
+    <div class="references-about">
+      <h3 class="references-heading">About this taxonomy</h3>
+      <p>This lexicon maps legacy beauty industry terminology to its longevity science equivalents across four registers: legacy term, longevity reframe, scientific basis, and plain language. The taxonomy draws on peer-reviewed literature in geroscience, cosmetic dermatology, and longevity medicine. Scientific basis descriptions are grounded in the references below. They do not constitute medical advice. This is a living document, updated as the evidence develops.</p>
+    </div>
+    <div class="references-list">
+      <h3 class="references-heading">References</h3>
+      <ol>
+        <li>López-Otín C, Blasco MA, Partridge L, Serrano M, Kroemer G. Hallmarks of aging: An expanding universe. <em>Cell.</em> 2023;186(2):243–278. doi:10.1016/j.cell.2022.11.001. PMID: 36599349.</li>
+        <li>Kream E, Fabi SG, Boen M. Skinspan: A holistic roadmap for extending skin longevity with evidence-based interventions. <em>J Cosmet Dermatol.</em> 2025;24(9):e70432. doi:10.1111/jocd.70432. PMID: 40913411.</li>
+        <li>Wyles SP, Maredia HS, Ansaf RB, Dweydari MR, Hurt RT, Bonnes SL, Khosla S, LeBrasseur NK, Draelos ZD, Davis MDP. Skinspan™: A healthy longevity framework for skin aging. <em>Mayo Clin Proc.</em> 2025 Nov;100(11):1976–1991. doi:10.1016/j.mayocp.2025.07.027. PMID: 41032001.</li>
+        <li>Furman D, Auwerx J, Bulteau AL, et al. Skin health and biological aging. <em>Nat Aging.</em> 2025 Jul;5(7):1195–1206. doi:10.1038/s43587-025-00901-6. PMID: 40527938.</li>
+        <li>Haykal D. Translating geroscience into clinical longevity dermatology: from mechanisms of aging to skin-centered interventions. <em>J Cosmet Dermatol.</em> 2026;25(1):e70616. doi:10.1111/jocd.70616. PMID: 41439619.</li>
+        <li>Klinngam W, Chaiwichien A, Osotprasit S, et al. Longevity cosmeceuticals as the next frontier in cosmetic innovation: a scientific framework for substantiating product claims. <em>Front Aging.</em> 2025;6:1586999. doi:10.3389/fragi.2025.1586999.</li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <footer>
   <span class="footer-note">For professional use in salon consultation and brand training</span>
@@ -526,8 +870,8 @@ const LEXICON = [
   {
     legacy: "Anti-aging",
     reframe: "Skin longevity / skinspan",
-    shifts: "From resisting aging to describing the duration over which skin reliably performs its core functions — protection, repair, and comfortable sensation. Longevity has a measurable arc. Resistance doesn't.",
-    script: "We're not trying to turn back the clock. We're looking at how to extend the period where your skin is genuinely performing well — barrier intact, recovering quickly, feeling comfortable. That's skinspan.",
+    shifts: "Anti-aging is a promise without a mechanism. Skinspan has one: the length of time skin reliably performs its core functions — protection, repair, and comfortable sensation. Longevity can be measured and influenced. Resistance cannot.",
+    script: "We're not trying to turn back the clock. We're looking at how to extend the period where your skin is genuinely working well — barrier intact, recovering quickly, feeling comfortable. That's skinspan.",
     keywords: [
       "anti-age","anti aging","antiaging","anti-aging","turn back the clock",
       "fight aging","combat aging","slow aging","slow down aging","reverse aging",
@@ -542,7 +886,7 @@ const LEXICON = [
   {
     legacy: "Younger-looking skin",
     reframe: "Skin's estimated biological age",
-    shifts: "From appearance-based claims to measurable changes tracked through aging markers and validated models. Biological age is a number the client can own and track over time — not a mirror impression.",
+    shifts: "How skin looks in a mirror is subjective and changes with light, sleep, and mood. Biological age — measured through cellular health markers — is not. It can be tracked and moved. Appearance-based goals give clients nothing to own; biological age does.",
     script: "Rather than aiming to look younger, we can start talking about your skin's estimated biological age — the cellular health markers that tell us more than texture or tone alone. That's something we can actually track and influence over time.",
     keywords: [
       "look younger","younger looking","younger skin","look young","appear younger",
@@ -559,8 +903,8 @@ const LEXICON = [
   {
     legacy: "Radiance / glow",
     reframe: "Barrier resilience and recovery speed",
-    shifts: "Surface luminosity reframed as a result of barrier function — moisture retention, stress response, and self-repair capacity. Glow isn't cosmetic. It's evidence of a skin that's working.",
-    script: "That luminosity you're after — it's actually your barrier functioning well. When your skin is retaining moisture properly and recovering from daily stress quickly, that's what creates the glow. We work on the mechanism, not just the look.",
+    shifts: "Glow is not a cosmetic effect. It is what a well-functioning barrier looks like from the outside — moisture retained, stress responses resolved quickly, surface cells renewed at the right rate. When the mechanism works, the look follows.",
+    script: "That luminosity — it's your barrier functioning well. When your skin retains moisture properly and recovers from daily stress quickly, that's what creates the glow. We work on the mechanism, not the look.",
     keywords: [
       "glow","glowing","radiance","radiant","luminous","luminosity",
       "lit from within","glass skin","glazed","dewy","dewey","fresh",
@@ -579,7 +923,7 @@ const LEXICON = [
   {
     legacy: "Sensitive / reactive skin",
     reframe: "Inflammaging profile",
-    shifts: "Chronic, low-grade inflammatory activity in tissue — managed as an ongoing profile, not a skin type. Inflammaging connects your skin's behavior to systemic patterns: sleep, diet, nervous system health, stress load, and recovery.",
+    shifts: "Chronic, low-grade inflammation in skin tissue is not a skin type. It is a profile — shaped by sleep quality, diet, stress load, gut health, and nervous system state. The skin's behaviour is a signal from the system as a whole.",
     script: "What we often call 'sensitive' or 'reactive' is frequently a chronic low-grade inflammatory pattern — what researchers call inflammaging. It connects to what's happening systemically: sleep quality, stress load, gut health. We can address it topically and help you see the bigger picture.",
     keywords: [
       "sensitive","sensitivity","reactive","reactivity","reacts to everything",
@@ -599,9 +943,9 @@ const LEXICON = [
   },
   {
     legacy: "Anti-wrinkle / firming",
-    reframe: "Senescence-informed interventions",
-    shifts: "Visible firmness and texture changes understood in context: senescent cell burden, SASP activity, and extracellular matrix integrity. This moves the conversation from surface correction to cellular environment — from symptom to source.",
-    script: "Firmness and texture loss are partly driven by an accumulation of senescent cells — cells that have permanently stopped renewing but are actively degrading the tissue around them. We can target that environment rather than just treating the surface expression.",
+    reframe: "Cellular senescence — working at the source",
+    shifts: "Firmness and texture change because of two things: changing extracellular matrix (ECM) integrity, and a growing presence of senescent cells — cells that have stopped renewing and actively secrete compounds that affect the surrounding tissue environment. The visible change is the surface expression of a cellular environment story.",
+    script: "Firmness and texture change are partly driven by a growing population of senescent cells — cells that have permanently stopped renewing and are actively affecting the tissue environment around them. We can work on that environment rather than just treating the surface expression.",
     keywords: [
       "wrinkle","wrinkles","fine lines","fine line","lines","deep lines",
       "expression lines","forehead lines","frown lines","crow's feet",
@@ -622,8 +966,8 @@ const LEXICON = [
   {
     legacy: "Products",
     reframe: "Protocols over time",
-    shifts: "Bottles and jars repositioned as components of a defined sequence — integrating in-salon treatments, home care, and realistic timeframes. Products without protocol are decoration. Protocol gives them meaning.",
-    script: "The products are only as effective as the protocol around them. What I want to build with you is a sequence — what happens here in the salon, what happens at home, and what we can realistically expect at each stage. That's when you start to see real change.",
+    shifts: "Products applied in isolation produce inconsistent results. A protocol — a defined sequence linking in-salon treatment, home care, timing, and realistic milestones — is what gives any individual product its context and meaning.",
+    script: "The products only work as well as the protocol around them. What I want to build with you is a sequence — what happens here in the salon, what happens at home, and what we can realistically expect at each stage. That's when real change begins.",
     keywords: [
       "product","products","what products","what should i use","what to use",
       "recommend","recommendation","what do you recommend","prescribe",
@@ -641,8 +985,8 @@ const LEXICON = [
   {
     legacy: "Skin care",
     reframe: "Skinspan as part of healthspan",
-    shifts: "Skin elevated from isolated beauty practice to one site of intervention within a broader longevity stack — alongside sleep, metabolic health, recovery, and systemic wellbeing. Skin as a living organ with memory.",
-    script: "The way I think about it now: skincare isn't separate from your health. Your skin reflects your sleep quality, your nervous system, your metabolic patterns. When we work on your skin here, we're working on one part of your healthspan — the period when everything is genuinely performing well.",
+    shifts: "Skin is a metabolically active organ that registers systemic health — sleep, metabolic function, nervous system load, recovery capacity. Caring for it as an isolated surface misses most of the story. Skinspan sits within healthspan: the period when the whole system is genuinely performing well.",
+    script: "Skincare is not separate from your health. Your skin reflects your sleep quality, your nervous system, your metabolic patterns. When we work on your skin here, we're working on one part of your healthspan — the period when everything performs well.",
     keywords: [
       "holistic","whole body","overall health","inside out","inside and out",
       "health and beauty","beauty and wellness","mind body","mind and body",
@@ -664,8 +1008,8 @@ const LEXICON = [
   {
     legacy: "Hair thinning / hair loss",
     reframe: "Follicle healthspan / hair longevity",
-    shifts: "Hair loss repositioned from a cosmetic inevitability to a biological process that can be mapped, measured, and influenced. The follicle is a living tissue with its own senescence cycle — anagen phase, miniaturization, stem cell exhaustion. Follicle healthspan asks how long we can keep the anagen phase robust, not just how we disguise the result when we can't.",
-    script: "What we're really looking at is your follicle healthspan — how long your follicles can maintain a full, active growth cycle. Thinning is often a sign that the cycle is shortening, not that growth has stopped. That's a biological process we can work with — scalp environment, inflammation levels, lifestyle — rather than just something to cover.",
+    shifts: "Each hair follicle has its own biological cycle — anagen (active growth), catagen (transition), and telogen (rest) — and its own senescence trajectory. Thinning happens as the anagen phase shortens and follicles miniaturise. The question is not why hair falls out, but how long the active growth cycle can be sustained.",
+    script: "Thinning is usually a sign that your follicles' active growth cycle is shortening, not that growth has stopped. That's a biological process we can work with — improving the scalp environment, reducing inflammation, addressing lifestyle factors — rather than something to cover.",
     keywords: [
       "hair loss","thinning hair","hair thinning","losing hair","hair falling out",
       "hair shedding","shedding","excessive shedding","more hair in the drain",
@@ -687,8 +1031,8 @@ const LEXICON = [
   {
     legacy: "Scalp problems / dandruff / oily scalp",
     reframe: "Scalp microbiome balance / scalp inflammaging",
-    shifts: "Scalp conditions reframed from hygiene issues to microbiome and barrier events — chronic imbalances with inflammatory drivers rather than isolated surface problems. The scalp microbiome governs follicle environment the same way the skin microbiome governs facial resilience. Dandruff is often not about cleanliness but about microbial diversity and barrier disruption.",
-    script: "What we often treat as a dandruff or oiliness problem is usually a microbiome imbalance — the scalp's ecosystem getting out of equilibrium. We approach it the same way we approach barrier health on the face: reduce the inflammatory triggers, restore microbial diversity, support the environment that follicles actually need to function well.",
+    shifts: "The scalp supports a distinct microbial ecosystem. Dandruff, seborrhoea, and chronic scalp irritation commonly reflect dysbiosis — a shift in that ecosystem — rather than excess oil or inadequate hygiene. Malassezia yeast overgrowth and low-grade scalp inflammation are the most common underlying drivers.",
+    script: "Scalp conditions like dandruff and chronic irritation are usually microbiome stories — the scalp's ecosystem is out of balance rather than simply dirty. When we restore that balance and calm the inflammatory environment, the surface symptoms follow. Cleansing alone does not fix this.",
     keywords: [
       "dandruff","flaking scalp","flaky scalp","scalp flakes","white flakes",
       "oily scalp","greasy scalp","scalp buildup","product buildup","sebum",
@@ -705,8 +1049,8 @@ const LEXICON = [
   {
     legacy: "Neck aging / décolletage",
     reframe: "Contiguous tissue zone / extended skinspan territory",
-    shifts: "Neck and décolletage elevated from afterthought to what they biologically are: tissue that is thinner than the face, has fewer oil glands, is constantly in motion, and begins showing cellular aging earlier. The face does not stop at the jawline. Treating skinspan without including the neck is like servicing an engine and ignoring the drivetrain.",
-    script: "The neck and décolletage are actually some of the most biologically vulnerable tissue we have — thinner skin, fewer oil glands, constant mechanical movement, high UV exposure. What we're seeing there is often further along the senescence timeline than the face. When we build your skinspan protocol, we treat it as one contiguous zone, not a separate afterthought.",
+    shifts: "The neck and chest are structurally different from facial skin — thinner dermis, fewer sebaceous glands, greater UV exposure, and chronic mechanical stress from downward head positioning. They age faster and show structural change earlier. Treating them separately from the face misses the most visible evidence of skin's biological age.",
+    script: "The neck and chest often tell a more accurate story about skin's biological age than the face, partly because we tend to treat them less. Thinner dermis, less natural oil protection, more UV exposure — they're structurally more vulnerable. We treat them as part of the same longevity protocol.",
     keywords: [
       "neck","my neck","neck skin","neck aging","neck wrinkles","neck lines",
       "neck bands","neck cords","platysma","turkey neck","tech neck","phone neck",
@@ -723,9 +1067,9 @@ const LEXICON = [
   },
   {
     legacy: "Stressed skin / tired skin",
-    reframe: "Cortisol burden / brain-skin axis disruption",
-    shifts: "Stress-related skin changes reframed from a vague complaint to a measurable biological pathway: the HPA axis releasing cortisol, which disrupts barrier function, increases oil production, drives inflammation, and accelerates cellular aging. The brain-skin axis is bidirectional — skin distress signals the brain, brain stress signals the skin. Addressing the skin without addressing the nervous system load is treating downstream effects.",
-    script: "What we're seeing in your skin is actually a cortisol story. When the nervous system is under sustained load, the brain-skin axis keeps the skin in a low-grade stress state — barrier function drops, inflammation rises, repair slows. We can work topically to buffer that, but the most powerful thing is understanding the load your skin is carrying systemically and building a protocol that accounts for it.",
+    reframe: "Cortisol load / the brain-skin axis",
+    shifts: "The skin-brain axis is a bidirectional communication channel: psychological stress activates the hypothalamic-pituitary-adrenal (HPA) axis, releasing cortisol and neuropeptides that directly increase mast cell activity and inflammatory signalling in skin. The skin reacts to stress through a documented neurochemical pathway, not metaphor.",
+    script: "There's a direct biological link between stress and skin — the nervous system releases compounds that activate inflammation in skin tissue. It's not just 'stress shows on your skin'. It's a measurable pathway. Addressing the nervous system side is part of the protocol, not a nice extra.",
     keywords: [
       "stressed","stressed skin","skin stress","stress breakouts","cortisol",
       "cortisol skin","stress hormones","stress and skin","anxiety skin",
@@ -744,8 +1088,8 @@ const LEXICON = [
   {
     legacy: "Facial / treatment",
     reframe: "Regenerative protocol / in-clinic longevity session",
-    shifts: "Individual treatments repositioned as sessions within a defined regenerative protocol — each serving a specific function in the sequence: preparation, active intervention, recovery, maintenance. A facial as a one-off event is a cosmetic experience. A facial as a protocol step is a longevity intervention. The difference is intent, sequencing, and continuity.",
-    script: "I think about what we do here differently from a traditional facial. This is a regenerative session — it has a specific role in your protocol sequence. Today we're focusing on barrier preparation and cellular environment. Next session we'll layer in the active intervention. The results compound when there's a deliberate sequence rather than starting from scratch each time.",
+    shifts: "Salon treatments classified by their mechanism of action, not their sensory experience. Treatments that deliver energy, induce controlled injury, or stimulate cell-to-cell communication have documentable biological effects — downregulation of SASP, induction of autophagy, collagen remodelling — distinct from those that offer comfort and maintenance.",
+    script: "The treatments we use differ in what they're actually doing biologically. Some work on the barrier. Some stimulate collagen remodelling. Some target the cellular environment directly. Knowing which mechanism you need — rather than which treatment sounds appealing — is how we build an effective protocol.",
     keywords: [
       "facial","get a facial","book a facial","need a facial","want a facial",
       "treatment","in salon","in-salon","in clinic","in-clinic","in office",
@@ -763,9 +1107,9 @@ const LEXICON = [
   },
   {
     legacy: "Active ingredients / serums / hero products",
-    reframe: "Longevity actives / senotherapeutic stack / regenerative agents",
-    shifts: "Individual hero ingredients repositioned as components of a regenerative stack — categorized by mechanism rather than by marketing claim. The longevity frame distinguishes between ingredients that address surface symptoms and those that engage cellular environment: senolytics that clear senescent cells, senomorphics that modulate SASP, exosomes that restore cell communication, and NAD+ precursors that fuel cellular repair.",
-    script: "The way I think about ingredients now is by what biological job they're doing rather than what they promise on the label. Are they addressing the cellular environment — senescent cell burden, inflammation signaling, barrier reconstruction? Or are they working on the surface expression? Both have a place, but the longevity-focused actives are the ones doing structural work underneath. That's what we're building your protocol around.",
+    reframe: "Longevity actives — each with a defined biological role",
+    shifts: "Ingredients categorised by biological mechanism rather than marketing claim. Senolytics clear senescent cells; senomorphics modulate their damaging secretions (SASP); exosomes restore cell-to-cell signalling; NAD+ precursors fuel cellular repair. A protocol built around mechanism is more predictable than one built around ingredients that promise results.",
+    script: "I think about ingredients by the biological job they're doing, not by what the label promises. Are they working on the cellular environment — clearing senescent cells, managing inflammation, rebuilding the barrier? Or are they working on the surface? Both matter, but the longevity actives are the ones doing structural work underneath.",
     keywords: [
       "exosomes","exosome","exosome serum","exosome treatment","exosome facial",
       "pdrn","salmon dna","polynucleotides","growth factors","growth factor serum",
@@ -785,23 +1129,335 @@ const LEXICON = [
       "hero ingredient","best serum","what serum","actives","active ingredients",
       "longevity ingredients","regenerative","regenerative skincare","biotech skincare"
     ]
+  },
+  {
+    legacy: "Sun damage / sun spots",
+    reframe: "Photoaging / cumulative UV exposure",
+    shifts: "UV exposure causes cumulative cellular change — strand breaks, thymine dimer formation, and extracellular matrix remodelling driven by UV-activated metalloproteinases (MMPs). Photoaging is a distinct biological pathway from chronological aging. Pigmentation and texture change are surface evidence of a process that has been running for decades.",
+    script: "The pigmentation and texture you're seeing is the visible result of UV exposure that has been accumulating for years — photoaging, a distinct pathway from ordinary skin aging. It's a separate and largely preventable pathway. We're not just fading spots; we're working on the tissue underneath.",
+    keywords: [
+      "sun damage","sun spots","sunspots","age spots","liver spots","brown spots",
+      "dark spots","solar lentigo","freckles","hyperpigmentation","photo damage",
+      "photodamage","photoaged","photoaging","uv damage","sun exposure",
+      "years of sun","too much sun","childhood sun","sun worshipper",
+      "leathery skin","sun worn","weathered skin","outdoor lifestyle skin",
+      "melasma","uneven skin tone","patchy skin","skin discoloration",
+      "mottled skin","blotchy","blotchiness","freckling","freckling worse",
+      "spf","sunscreen","sun protection","retin-a for sun damage"
+    ]
+  },
+  {
+    legacy: "Collagen banking / build collagen",
+    reframe: "Early structural investment — maintaining what works",
+    shifts: "Collagen density peaks in the mid-twenties and reduces roughly 1% a year from there. Maintaining that density is more effective than trying to rebuild once structure has changed. Sustaining collagen I and III networks and fibroblast activity before any visible change is the same logic as maintaining any asset rather than restoring one.",
+    script: "Your collagen network is at its peak right now and production reduces from here at a steady rate. Working to maintain that density before any visible change is far more effective than trying to rebuild afterwards. The results compound; restoration does not.",
+    keywords: [
+      "collagen banking","build collagen","boost collagen","collagen supplements",
+      "collagen drink","collagen powder","collagen loss","losing collagen",
+      "collagen production","collagen breakdown","collagen decline",
+      "preventive skincare","proactive skincare","starting young","in my twenties",
+      "in my thirties","early intervention","anti-aging early","prevent aging",
+      "preventative","future proofing skin","invest in skin","skin investment",
+      "collagen peptides","marine collagen","bovine collagen","vitamin c collagen",
+      "collagen density","skin structure","skin scaffolding","dermis","dermal"
+    ]
+  },
+  {
+    legacy: "Epigenetic skincare / skin reset",
+    reframe: "Epigenetic recalibration",
+    shifts: "As skin cells age, gene expression changes through DNA methylation and histone modification — not through changes to the DNA sequence itself, but through chemical signals that switch genes on or off. Some ingredients — retinoids, certain peptides, NAD+ precursors — show evidence of modulating these signals towards patterns associated with younger cell function.",
+    script: "Epigenetic skincare works on the instructions your skin cells are following, not the DNA itself. As we age, the signals telling cells to repair and renew get quieter. Some ingredients can turn those signals up again. It's not a reset — it's a recalibration.",
+    keywords: [
+      "epigenetics","epigenetic","epigenetic skincare","gene expression","dna methylation",
+      "skin reset","skin reboot","cellular reset","reset my skin","start fresh",
+      "reprogram skin","skin reprogramming","cellular reprogramming",
+      "biological clock","epigenetic clock","horvath clock","dna age",
+      "cell renewal","cellular renewal","cellular rejuvenation","cell turnover",
+      "skin cycling","skin cycle","retinol cycling","active cycling"
+    ]
+  },
+  {
+    legacy: "Tired skin / no energy / dull complexion",
+    reframe: "Mitochondrial health / cellular energy capacity",
+    shifts: "Mitochondria produce ATP — the energy that powers cell repair, protein synthesis, and barrier maintenance. Mitochondrial efficiency changes with age, affecting the energy available for normal cell function. The result shows up on the surface as slower recovery, quieter resilience, and reduced luminosity.",
+    script: "The flatness and slower recovery you're noticing are partly a cellular energy story. Mitochondria power skin repair, and their efficiency changes with age. Ingredients like NAD+ precursors and CoQ10 target that energy pathway directly. We're not just brightening the surface — we're supporting what's driving it.",
+    keywords: [
+      "tired skin","no glow","flat skin","lack of radiance","skin looks flat",
+      "no energy in skin","exhausted skin","dull face","grey face",
+      "skin won't recover","takes longer to bounce back","skin looks older",
+      "mitochondria","nad+","coq10","cellular energy","atp","energy",
+      "cellular health","cell health","metabolic skin","slow repair",
+      "skin fatigue","fatigue skin","sluggish skin"
+    ]
+  },
+  {
+    legacy: "Large pores / skin texture",
+    reframe: "Follicle wall structure and the collagen around it",
+    shifts: "Pores do not open or close. Their visible size is determined by follicle wall structure, the surrounding collagen matrix, and sebum production. Texture irregularities reflect collagen organisation in the dermis below. Improving the tissue architecture around follicles produces better results than surface cleansing.",
+    script: "Pores don't open and close — their size is a structural issue, influenced by the collagen around the follicle and sebum production stretching it. When we improve the collagen architecture and calm the inflammatory environment, the appearance improves from the inside out. It's not a cleansing problem.",
+    keywords: [
+      "large pores","big pores","open pores","visible pores","clogged pores",
+      "pore size","minimize pores","shrink pores","pore tightening",
+      "rough texture","uneven texture","bumpy skin","pitted skin",
+      "skin texture","textured skin","skin not smooth","orange peel skin",
+      "sebaceous filaments","blackheads","congestion","congested skin",
+      "oily skin texture","combination skin texture","t-zone"
+    ]
+  },
+  {
+    legacy: "Eye area aging / dark circles / puffiness",
+    reframe: "Orbital volume / lymphatic flow / vascular pigmentation — three distinct mechanisms",
+    shifts: "Three separate mechanisms drive eye-area aging and are often treated as one: volume loss in the orbital fat compartments creates hollowing and shadow; chronic lymphatic stasis causes persistent puffiness; vascular permeability in the thin periorbital skin leaves haemoglobin breakdown pigment behind. Each requires a different intervention.",
+    script: "The eye area is doing three different things at once. The darkness can come from shadowing caused by volume loss — a structural issue. Or it can be vascular, with tiny vessels leaking pigment. The puffiness is usually lymphatic — fluid not clearing efficiently. Identifying which mechanism is driving what you're seeing is the first step.",
+    keywords: [
+      "dark circles","dark eyes","under eye circles","tired eyes","puffy eyes",
+      "eye puffiness","morning puffiness","swollen eyes","eye bags","eye bags puffy",
+      "hollowness under eyes","sunken eyes","orbital hollowing","tear trough",
+      "under eye pigmentation","bluish under eyes","purple under eyes",
+      "fine lines around eyes","crow's feet","eye wrinkles","crepey eye area",
+      "eye cream","eye serum","eye treatment","periorbital","around the eyes"
+    ]
+  },
+  {
+    legacy: "Skin supplements / beauty ingestibles / collagen drinks",
+    reframe: "Nutricosmetics / feeding the skin from within",
+    shifts: "Skin is a metabolically demanding organ. Some of what it needs — collagen peptides, ceramide precursors, NAD+ precursors, omega fatty acids — cannot be produced in sufficient quantity through diet alone at the rate of decline. Ingestibles deliver these substrates systemically, via the gut. Topical and systemic approaches address different parts of the same problem.",
+    script: "Ingestibles are systemic support — you're feeding the skin from the inside. Oral collagen peptides stimulate fibroblasts to produce more collagen. NAD+ precursors support cellular energy. Ceramide supplements support the barrier. This is not instead of topical — it's building the foundation that topicals work on.",
+    keywords: [
+      "collagen supplement","collagen drink","beauty supplement","skin supplement",
+      "ingestible beauty","drinkable collagen","beauty from within","inside out",
+      "marine collagen","bovine collagen","collagen powder","collagen capsules",
+      "omega 3 skin","fish oil skin","biotin skin","skin vitamins",
+      "nutricosmetics","beauty nutrition","skin nutrition","gut skin",
+      "what to eat for skin","diet and skin","food for skin","antioxidant foods"
+    ]
+  },
+  {
+    legacy: "Sleep skin / tired face / circadian skin",
+    reframe: "Circadian skin rhythm / the nocturnal repair cycle",
+    shifts: "Skin operates on a 24-hour biological clock. Cell division, DNA repair, barrier lipid synthesis, and growth factor production happen predominantly at night. Sleep timing — not only duration — governs how fully these processes run. When the repair window shortens or fragments, the skin's nightly housekeeping is incomplete.",
+    script: "Your skin has its own clock — circadian rhythms that run most repair and renewal processes at night. When sleep is fragmented or mistimed, the cellular housekeeping is incomplete: DNA repair, barrier rebuilding, cell division. When we design your evening protocol, we're trying to support that window. The timing of what you apply matters as much as what it is.",
+    keywords: [
+      "sleep and skin","not sleeping","poor sleep skin","insomnia skin",
+      "night shift skin","circadian","body clock skin","tired face",
+      "looking tired","always look exhausted","sleep deprived skin",
+      "night cream","overnight mask","sleeping mask","night routine",
+      "morning puffiness","puffy in morning","skin worse in morning",
+      "shift work skin","jet lag skin","travel skin","time zone skin",
+      "chronobiology","skin clock","nighttime repair"
+    ]
+  },
+  {
+    legacy: "Sugar skin / dull sallow skin / stiff skin",
+    reframe: "Glycation / advanced glycation end-products (AGEs)",
+    shifts: "Glycation occurs when excess sugar in the bloodstream binds to collagen and elastin, forming advanced glycation end-products (AGEs). AGEs stiffen the dermal matrix, make collagen resistant to repair, and produce the dull yellow-grey tone associated with ageing skin. The rate of glycation rises with high refined sugar intake — making it a directly modifiable lifestyle factor.",
+    script: "Glycation is what happens when sugar attaches to your collagen — it essentially caramelises it, making it stiffer and harder to repair. It shows up as that dull, slightly yellowed tone and loss of bounce. Diet drives it: high sugar accelerates it. We can address it topically, but the systemic piece matters too.",
+    keywords: [
+      "sugar skin","sugar and skin","glycation","ages","advanced glycation",
+      "sallow skin","sallowness","yellowish skin","yellow tone","dull yellow",
+      "skin looks old","aged skin","skin stiff","collagen stiff",
+      "diet and skin aging","sugar damage","sugar facial aging",
+      "anti-glycation","glycation treatment","anti-sugar skincare",
+      "loss of bounce","skin elasticity","skin flexibility"
+    ]
+  },
+  {
+    legacy: "Hormonal skin / menopause skin / my skin changed",
+    reframe: "Estrogen-driven skin change — a distinct hormonal event",
+    shifts: "Declining estrogen during perimenopause and menopause drives measurable changes in skin physiology: collagen production falls by roughly 30% in the first five years after menopause; hyaluronic acid and ceramide synthesis decrease; barrier function weakens; inflammatory reactivity rises. This is not general skin aging. It is a distinct hormonal event with a documented biological timeline.",
+    script: "What your skin is going through is not just aging — it's a hormonal event with a specific mechanism. Falling estrogen reduces your skin's capacity to produce collagen, maintain its barrier, and manage inflammation. The change can feel sudden because the timeline is compressed. Understanding that changes what we target and how.",
+    keywords: [
+      "menopause skin","menopausal skin","perimenopause skin","hormonal skin",
+      "skin changed overnight","skin changed dramatically","skin different since",
+      "estrogen skin","hormones and skin","hrt skin","hormone replacement skin",
+      "dry menopause","menopause dryness","perimenopausal dryness",
+      "skin thinning menopause","crepey menopause","loss of firmness menopause",
+      "reactive since menopause","sensitive since menopause","breakouts menopause",
+      "andropause skin","testosterone skin","hormonal balance skin"
+    ]
+  },
+  {
+    legacy: "Breakouts / skin purging / congested skin",
+    reframe: "Skin microbiome balance / follicle environment",
+    shifts: "Adult breakouts are not a hygiene problem. They reflect a shift in the skin microbiome, excess sebum responding to hormonal or inflammatory signals, and follicular inflammation that precedes any visible lesion. Congestion describes a state of microbial imbalance and barrier change. Purging — increased breakouts during active ingredient introduction — reflects accelerated cell turnover exposing pre-existing congestion.",
+    script: "Adult breakouts are almost never about cleanliness. They're a microbiome story — the skin's ecosystem is out of balance, certain bacteria are proliferating, and the follicular environment becomes inflamed. We're not just managing the symptom; we're trying to restore microbial balance and reduce the inflammatory environment. That's a slower but more durable outcome.",
+    keywords: [
+      "breakouts","acne","adult acne","hormonal acne","breakout prone",
+      "congested skin","congestion","blackheads","whiteheads","spots",
+      "purging","skin purge","purging from retinol","purging from actives",
+      "cystic acne","cystic breakouts","deep breakouts","under skin",
+      "oily breakouts","t-zone breakouts","chin breakouts","jaw breakouts",
+      "back acne","body breakouts","mask acne","maskne","stress breakouts",
+      "bacteria skin","microbiome acne","gut acne","diet breakouts"
+    ]
+  },
+  {
+    legacy: "Skin detox / cellular cleanup / skin reset",
+    reframe: "Autophagy / cellular waste clearance",
+    shifts: "Autophagy is the process by which cells identify and break down damaged organelles and misfolded proteins, recycling them into usable components. It is a confirmed hallmark of aging: autophagy becomes less active with age; cellular debris builds and fibroblasts work with less efficiency. Some ingredients — spermidine, resveratrol — and intermittent approaches to active use show evidence of supporting autophagic activity.",
+    script: "There is a literal cellular cleanup process called autophagy where cells digest their own damaged parts and recycle them. It becomes less active with age, which means debris builds and fibroblasts work with less efficiency. This is part of why intermittent approaches to actives may outperform constant saturation — and why more is not always better.",
+    keywords: [
+      "skin detox","detox skin","cleanse skin","reset skin","purify skin",
+      "skin cleanse","cellular cleanup","cell renewal","purge","deep cleanse",
+      "autophagy","cellular autophagy","cell housekeeping","cell recycling",
+      "spermidine","rapamycin","mtor","sirtuin","sirt","fasting skin",
+      "intermittent fasting skin","caloric restriction skin",
+      "zombie cells","senescent","cellular waste","protein accumulation"
+    ]
+  },
+  {
+    legacy: "Diet and skin / gut and skin / food sensitivities",
+    reframe: "Gut microbiome–skin axis / systemic inflammatory balance",
+    shifts: "Gut microbiome composition regulates systemic inflammation through the production of metabolites, immune signalling molecules, and short-chain fatty acids. Gut dysbiosis — disruption of the diversity and balance of gut bacteria — raises the systemic inflammatory load that skin has to manage. This is a distinct pathway from the skin's local microbiome, operating through the bloodstream and immune system.",
+    script: "The gut and skin are connected more directly than they might seem. The bacteria in your gut regulate systemic inflammation — when that ecosystem shifts, it turns up the inflammatory signal your skin has to manage. Supporting gut diversity through diet and prebiotics is a direct input into your skin's inflammatory environment, not just a general wellness measure.",
+    keywords: [
+      "gut and skin","gut skin connection","gut skin axis","leaky gut skin",
+      "gut health skin","gut microbiome skin","probiotic skin","prebiotic skin",
+      "food sensitivity skin","food allergy skin","dairy and skin","gluten skin",
+      "diet and breakouts","diet and inflammation","elimination diet skin",
+      "digestive health skin","ibs skin","bloating skin","constipation skin",
+      "fermented food skin","kombucha skin","kefir skin","gut flora skin"
+    ]
+  },
+  {
+    legacy: "My skin is just genetic / nothing works",
+    reframe: "Telomere length / the cell's replication capacity",
+    shifts: "Telomeres — protective caps on chromosomes — shorten with each cell division. When they reach a critical length, the cell enters permanent senescence and can no longer renew. The rate of shortening is partly inherited but substantially influenced by oxidative stress, UV exposure, chronic inflammation, and poor sleep — all modifiable factors. Genetics sets the range. Behaviour determines where within that range you land.",
+    script: "The 'it's just genetics' framing is partly true and mostly not. Your cells have a biological clock — telomeres that shorten each time a cell divides — and when they're short enough, the cell stops renewing. But the rate of shortening is driven by oxidative stress, UV exposure, and chronic inflammation — things we can work with. Genetics sets a range. What you do determines where in that range you end up.",
+    keywords: [
+      "genetics skin","it's genetic","runs in family","nothing works","hopeless",
+      "can't improve","tried everything","nothing helps","my mother's skin",
+      "inherited skin","genetic aging","premature aging","aging fast",
+      "telomere","telomere length","biological clock","cellular age",
+      "replicative senescence","cell lifespan","cell division",
+      "dna damage","chromosome","genomic instability"
+    ]
+  },
+  {
+    legacy: "Screen skin / blue light aging / device damage",
+    reframe: "High-energy visible light (HEV) oxidative stress",
+    shifts: "High-energy visible light — the blue and violet spectrum from screens and LED lighting — generates reactive oxygen species (ROS) in skin cells, causing oxidative damage similar to UV but not blocked by standard SPF. HEV penetrates deeper than UVB and occurs indoors year-round. Evidence links chronic HEV exposure to pigmentation, particularly in darker skin tones, and to collagen degradation via metalloproteinase (MMP) activation.",
+    script: "Blue light from screens generates free radical damage in skin, similar to UV but not blocked by standard sunscreen — and it happens indoors all day. The pigmentation link is real, particularly for darker skin tones. The answer is not to avoid screens; it's to factor HEV protection into your antioxidant strategy and SPF formulation.",
+    keywords: [
+      "blue light skin","screen skin","device damage skin","digital aging",
+      "hev light","high energy visible light","indoor pollution skin",
+      "screen time skin","laptop skin","phone skin","zoom skin",
+      "led light skin","artificial light skin","indoor light aging",
+      "hyperpigmentation blue light","blue light spots","screen damage pigmentation",
+      "blue light sunscreen","blue light antioxidant","blue light protection"
+    ]
+  },
+  {
+    legacy: "Facial massage / drainage / puffy face",
+    reframe: "Lymphatic flow / fluid clearance capacity",
+    shifts: "The lymphatic system clears cellular waste, inflammatory byproducts, and excess fluid from tissue. In the face, lymphatic flow is driven by muscle movement, sleep position, and hydration. It slows with age, inactivity, high sodium intake, or chronic low-grade inflammation. Facial massage and drainage techniques stimulate lymphatic vessels mechanically, improving clearance.",
+    script: "Drainage work is about clearing what the lymphatic system should be clearing naturally. Think of it as the skin's waste management. When it gets sluggish — from inflammation, poor sleep positioning, diet — fluid and debris build up in the tissue. The massage techniques we use stimulate the lymphatic vessels directly. It is one of the most underrated mechanisms in facial work.",
+    keywords: [
+      "puffy face","face puffiness","swollen face","bloated face","facial swelling",
+      "morning puffiness","puffy cheeks","puffy jaw","puffy under eyes",
+      "facial massage","gua sha","lymphatic drainage","face massage",
+      "lymphatic","lymph","lymph nodes face","lymph drainage",
+      "drainage massage","depuff","de-puff","face depuffing",
+      "buccal massage","sculpting massage","lifting massage","face contouring",
+      "retain water face","water retention face","salt and skin"
+    ]
+  },
+  {
+    legacy: "Lifestyle / environment / outside factors",
+    reframe: "Skin exposome",
+    shifts: "The skin exposome describes the totality of environmental, behavioural, and biological exposures that act on skin across a lifetime — UV radiation, air pollution, smoking, sleep, diet, stress, and daily habits. Mayo Clinic's 2025 skinspan framework positions it as the primary driver of extrinsic aging. Critically, genetics accounts for less than 25% of skin aging. The rest is exposome — and the exposome is largely modifiable.",
+    script: "There's a term in longevity medicine for the full picture of what acts on your skin from the outside: the exposome. It covers UV, pollution, sleep, diet, stress, habits — all of it together. The research is clear that less than a quarter of skin aging is genetic. The rest is this. That's the part we can work with.",
+    keywords: [
+      "lifestyle skin","environment and skin","outside factors","external factors",
+      "pollution skin","city skin","urban skin","air pollution skin",
+      "smoking skin","smoker skin","cigarettes skin","alcohol skin",
+      "sleep skin","diet skin","stress skin","habits skin",
+      "uv exposure","sun exposure","environmental damage",
+      "what causes aging","why is my skin aging","what affects skin",
+      "modifiable","can i change","reversible aging","preventable aging",
+      "exposome","skin exposome","environmental aging","extrinsic aging",
+      "intrinsic extrinsic","inside outside aging","nature nurture skin",
+      "genetics skin","how much is genetic","is it genetic"
+    ]
+  },
+  {
+    legacy: "Nothing works anymore / skin has plateaued / stopped responding",
+    reframe: "Proteostasis / protein quality management in cells",
+    shifts: "Proteostasis is the cell's capacity to produce, fold, maintain, and clear proteins. As proteostasis changes with age — a confirmed hallmark — misfolded proteins build inside cells, affecting normal function and the skin's capacity to respond to treatment. A skin that appears to have stopped responding is often a skin in which cellular protein management is working with less efficiency. This is distinct from barrier change or senescent cell activity, though all three frequently coexist.",
+    script: "When skin feels like it has stopped responding — treatments that used to work are doing less — one of the mechanisms behind that is called proteostasis change. It means the cells' internal housekeeping for proteins is working with less efficiency. Misfolded proteins build up and affect normal cell function. It's not that the treatments have stopped working. It's that the cellular environment they're working in has changed. That changes what we target.",
+    keywords: [
+      "nothing works","stopped working","skin not responding","plateau",
+      "skin plateaued","used to work","no longer works","diminishing returns",
+      "skin given up","hopeless","tried everything","nothing helps anymore",
+      "skin not improving","treatments not working","products not working",
+      "lost results","results faded","not seeing results","maintenance only",
+      "skin stagnant","no progress","same skin","skin won't change",
+      "proteostasis","protein folding","protein quality","cellular housekeeping",
+      "unfolded protein","damaged protein","cellular decline","advanced aging"
+    ]
+  },
+  {
+    legacy: "Slow healing / takes ages to heal / skin won't recover",
+    reframe: "Regenerative capacity / the wound healing response",
+    shifts: "Wound healing capacity is a measurable indicator of skin's biological age — identified as a primary clinical marker in the Mayo Clinic skinspan framework. The process depends on coordinated activity across multiple cell types: platelets, neutrophils, macrophages, fibroblasts, and keratinocytes. Age affects each phase — inflammatory, proliferative, and remodelling — through changing growth factor signalling, fibroblast senescence, and shifts in angiogenesis and ECM structure. Recovery speed is information worth paying attention to.",
+    script: "How quickly your skin heals and recovers is one of the most direct indicators of its biological age. The healing process involves multiple cell types working in sequence — and age affects each one. We can support recovery capacity directly through protocol design: barrier reinforcement, anti-inflammatory actives, and timing treatments to give the skin the recovery window it needs. Slow healing is a signal worth taking seriously.",
+    keywords: [
+      "slow healing","takes ages to heal","wound won't heal","skin won't recover",
+      "slow recovery","takes forever","bruises easily","slow to fade",
+      "post-treatment recovery","red for days after","sensitive after treatments",
+      "downtime","long downtime","takes longer than it used to",
+      "skin fragile","fragile skin","easily damaged","tears easily",
+      "post-procedure","recovery time","healing time","repair",
+      "regeneration","regenerative capacity","skin repair","tissue repair",
+      "collagen repair","fibroblast","wound healing","healing response"
+    ]
+  },
+  {
+    legacy: "Skin aging / intrinsic aging vs extrinsic aging",
+    reframe: "Intrinsic aging / extrinsic aging — and why the distinction matters",
+    shifts: "Intrinsic aging is driven by inherent biology: genetics, hormonal fluctuations, cellular senescence, telomere attrition, and epigenetic change. It proceeds regardless of behaviour. Extrinsic aging is driven by the skin exposome: UV, pollution, smoking, diet, sleep, stress. It is largely preventable and reversible. Mayo Clinic's 2025 framework establishes that genetics accounts for less than 25% of skin aging — meaning the extrinsic component dominates. Conflating the two leads to fatalism about changes that are, in fact, modifiable.",
+    script: "There are two types of skin aging and they work differently. Intrinsic aging is biology — the internal clock, hormones, genetics. You can slow it but not stop it. Extrinsic aging is everything outside: sun, pollution, sleep, diet, habits. That's more than 75% of what drives visible change, and it is largely modifiable. The reason I ask so many questions about your lifestyle is that understanding the extrinsic load tells us where the biggest gains are.",
+    keywords: [
+      "intrinsic aging","extrinsic aging","internal aging","external aging",
+      "biological aging","chronological aging","skin aging types",
+      "what causes skin aging","types of aging","aging process",
+      "can't stop aging","inevitable aging","aging is just age",
+      "nature vs nurture skin","genetics vs lifestyle",
+      "modifiable aging","preventable aging","reversible aging",
+      "inside aging","outside aging","environmental vs genetic",
+      "aging causes","root cause aging","why does skin age",
+      "how skin ages","mechanism of aging","skin biology"
+    ]
   }
 
 ];
 
 // ── RENDER CARDS ──
+const CHEVRON_SVG = `<svg class="card-toggle-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3,6 8,11 13,6"/></svg>`;
+
 function renderCards() {
   const grid = document.getElementById('card-grid');
   grid.innerHTML = LEXICON.map((item, i) => `
-    <div class="lexicon-card" id="card-${i}" onclick="toggleCard(${i})">
+    <div class="lexicon-card"
+         id="card-${i}"
+         role="button"
+         tabindex="0"
+         aria-expanded="false"
+         aria-controls="expand-${i}"
+         onclick="toggleCard(${i})"
+         onkeydown="handleCardKey(event, ${i})">
       <div class="card-legacy">Legacy term</div>
       <div class="card-term">${item.legacy}</div>
       <div class="card-arrow">reframes as <span>${item.reframe}</span></div>
-      <div class="card-expand">
+      <div class="card-toggle" aria-hidden="true">
+        ${CHEVRON_SVG}
+        <span class="card-toggle-label">Expand</span>
+      </div>
+      <div class="card-expand" id="expand-${i}" role="region" aria-label="${item.legacy} — detail">
         <div class="card-expand-inner">
-          <div class="expand-section-label">What shifts</div>
+          <div class="expand-section-label">Scientific basis</div>
           <div class="expand-what-shifts">${item.shifts}</div>
-          <div class="expand-section-label">Client conversation line</div>
+          <div class="expand-section-label">In plain language</div>
           <div class="client-script">${item.script}"</div>
         </div>
       </div>
@@ -812,16 +1468,38 @@ function renderCards() {
 function toggleCard(i) {
   const card = document.getElementById(`card-${i}`);
   const wasOpen = card.classList.contains('open');
-  document.querySelectorAll('.lexicon-card').forEach(c => c.classList.remove('open'));
-  if (!wasOpen) card.classList.add('open');
+  // Close all
+  document.querySelectorAll('.lexicon-card').forEach(c => {
+    c.classList.remove('open');
+    c.setAttribute('aria-expanded', 'false');
+    const lbl = c.querySelector('.card-toggle-label');
+    if (lbl) lbl.textContent = 'Expand';
+  });
+  // Open this one if it wasn't already open
+  if (!wasOpen) {
+    card.classList.add('open');
+    card.setAttribute('aria-expanded', 'true');
+    const lbl = card.querySelector('.card-toggle-label');
+    if (lbl) lbl.textContent = 'Close';
+  }
+}
+
+// Nielsen #4 — keyboard nav: Enter and Space both trigger expand
+function handleCardKey(e, i) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleCard(i);
+  }
 }
 
 // ── MODE SWITCH ──
 function setMode(mode) {
   document.getElementById('mode-browse').style.display = mode === 'browse' ? 'block' : 'none';
   document.getElementById('mode-translate').style.display = mode === 'translate' ? 'block' : 'none';
+  document.getElementById('mode-reference').style.display = mode === 'reference' ? 'block' : 'none';
   document.getElementById('btn-browse').classList.toggle('active', mode === 'browse');
   document.getElementById('btn-translate').classList.toggle('active', mode === 'translate');
+  document.getElementById('btn-reference').classList.toggle('active', mode === 'reference');
 }
 
 // ── PHRASE DATA ──
@@ -936,6 +1614,26 @@ const CATEGORY_LABELS = [
   "Stress & nervous system",
   "In-clinic treatments",
   "Ingredients & actives",
+  "Sun damage & photoaging",
+  "Collagen & structure",
+  "Epigenetics & cellular reset",
+  "Cellular energy & luminosity",
+  "Pores & texture",
+  "Eye area & periorbital",
+  "Supplements & ingestibles",
+  "Sleep & circadian skin",
+  "Glycation & sugar skin",
+  "Hormonal & menopausal skin",
+  "Breakouts & congestion",
+  "Cellular cleanup & autophagy",
+  "Gut-skin axis",
+  "Genetics & cellular aging",
+  "Blue light & screen skin",
+  "Lymphatic & drainage",
+  "Lifestyle & the exposome",
+  "Loss of proteostasis",
+  "Recovery & wound healing",
+  "Intrinsic vs extrinsic aging",
 ];
 
 // ── RENDER PHRASE SELECTOR ──
@@ -978,20 +1676,35 @@ function selectPhrase(termIdx, btn) {
     <div class="result-legacy">${item.legacy}</div>
     <div class="result-reframe">${item.reframe}</div>
     <div class="result-divider"></div>
-    <div class="result-shifts-label">What shifts</div>
+    <div class="result-shifts-label">Scientific basis</div>
     <div class="result-shifts">${item.shifts}</div>
-    <div class="result-shifts-label">Try saying this instead</div>
-    <div class="result-script">${item.script}"</div>
+    <div class="result-shifts-label">In plain language</div>
+    <div class="result-script">${item.script}</div>
   `;
 
   // Smooth scroll to result
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
+// ── RENDER REFERENCE TABLE ──
+function renderTable() {
+  const tbody = document.getElementById('reference-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = LEXICON.map(item => `
+    <tr>
+      <td class="col-legacy-cell">${item.legacy}</td>
+      <td class="col-reframe-cell">${item.reframe}</td>
+      <td class="col-science-cell">${item.shifts}</td>
+      <td class="col-plain-cell">${item.script}</td>
+    </tr>
+  `).join('');
+}
+
 // Allow Enter key in textarea with Ctrl/Cmd
 document.addEventListener('DOMContentLoaded', () => {
   renderCards();
   renderPhraseSelector();
+  renderTable();
 });
 </script>
 </body>
