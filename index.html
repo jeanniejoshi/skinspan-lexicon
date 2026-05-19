@@ -959,6 +959,7 @@
 <footer>
   <span class="footer-note">For professional use in salon consultation, education, and brand training</span>
   <span class="footer-tag">Skin is treated as a living organ with memory</span>
+  <span class="footer-note" style="opacity:0.5">Jeannie Joshi</span>
 </footer>
 
 <script>
@@ -1673,7 +1674,7 @@ function renderCards() {
          tabindex="0"
          aria-expanded="false"
          aria-controls="expand-${i}"
-         onclick="toggleCard(${i})"
+         onclick="toggleCard(${i}, event)"
          onkeydown="handleCardKey(event, ${i})">
       <div class="card-legacy">Legacy term</div>
       <div class="card-term">${item.legacy}</div>
@@ -1694,7 +1695,12 @@ function renderCards() {
   `).join('');
 }
 
-function toggleCard(i) {
+function toggleCard(i, event) {
+  // Don't collapse if user is selecting text
+  if (window.getSelection().toString().length > 0) return;
+  // Don't collapse if click was inside the expanded content
+  if (event && event.target.closest('.card-expand')) return;
+  
   const card = document.getElementById(`card-${i}`);
   const wasOpen = card.classList.contains('open');
   document.querySelectorAll('.lexicon-card').forEach(c => {
